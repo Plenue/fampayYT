@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  app :
+    build: ./app/
+    ports:
+      - '8000:8000'
+    env_file:
+      - './app/.env' 
+  db:
+    build: ./database/
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/database
