@@ -5,5 +5,10 @@ from app.db.models.videos import Video
 
 
 def get_latest_date(db: Session):
-    for date in db.query(func.max(Video.date_posted)).first():
-        return date
+    try:
+        for date in db.query(func.max(Video.date_posted)).first():
+            return date
+            
+    except Exception as e:
+        print("app.utils.last_published: ORM Call")
+        print(e)

@@ -1,8 +1,8 @@
 from sqlalchemy.orm import Session
 
-from app.schemas.videos import VideoCreate
-from app.db.models.videos import Video
+from app.db.session import engine
 
 
-def db_status(db: Session):
-    db.commit()
+def db_status():
+    conn = engine.connect()
+    conn.close()
