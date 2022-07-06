@@ -3,12 +3,12 @@ from enum import Enum
 from fastapi import APIRouter, Depends
 
 from app.db.session import get_db
-from app.utils.db_test import db_status
+from app.utils.get_videos import search_videos
 
 router = APIRouter()
 
 
-@router.get("/health")
+@router.get("/search")
 def health(Session=Depends(get_db)):
-    db_status(Session)
+    search_videos(Session)
     return {"Status": "Running Fine"}

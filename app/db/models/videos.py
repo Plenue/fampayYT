@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Date
+from sqlalchemy import Column, Integer, String, DateTime
 from sqlalchemy.orm import relationship
 
 from app.db.base_class import Base
@@ -10,4 +10,4 @@ class Video(Base):
     channel_name = Column(String, nullable=False)
     url = Column(String)
     description = Column(String, nullable=False)
-    date_posted = Column(Date)
+    date_posted = Column(DateTime)

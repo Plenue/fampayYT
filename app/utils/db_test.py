@@ -4,5 +4,5 @@ from app.schemas.videos import VideoCreate
 from app.db.models.videos import Video
 
 
-def dbStatus(db: Session):
+def db_status(db: Session):
     db.commit()
