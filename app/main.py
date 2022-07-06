@@ -22,7 +22,7 @@ def yt_data():
     while True:
         Session = SessionLocal()
         yt_scraping(Session)
-        time.sleep(10)
+        time.sleep(180)
 
 
 def create_tables():

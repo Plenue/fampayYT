@@ -9,6 +9,7 @@ router = APIRouter()
 
 
 @router.get("/search")
-def health(Session=Depends(get_db)):
-    search_videos(Session)
-    return {"Status": "Running Fine"}
+def search(Session=Depends(get_db)):
+    response = search_videos(Session, query="")
+    print(len(response["data"]))
+    return response
