@@ -1,4 +1,5 @@
 import os
+import json
 from dotenv import load_dotenv
 
 from pathlib import Path
@@ -19,8 +20,8 @@ class Settings:
     POSTGRES_DB: str = os.getenv("POSTGRES_DB", "tdd")
     DATABASE_URL = f"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_SERVER}:{POSTGRES_PORT}/{POSTGRES_DB}"
 
-    YT_SEARCH_QUERY = os.getenv("YT_SEARCH_QUERY", "phones")
-    YT_API_KEY = os.getenv("YT_API_KEY", "")
+    YT_SEARCH_QUERY: str = os.getenv("YT_SEARCH_QUERY", "phones")
+    YT_API_KEY: list = json.loads(os.getenv("YT_API_KEY"))
 
 
 settings = Settings()

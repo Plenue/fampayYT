@@ -9,7 +9,7 @@ def add_new_videos(video, db: Session):
         videoEntry = Video(
             title=video["title"],
             channel_name=video["channel_name"],
-            url=video["url"],
+            thumbnail_url=video["thumbnail_url"],
             description=video["description"],
             date_posted=video["date_posted"],
         )

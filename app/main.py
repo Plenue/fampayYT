@@ -26,7 +26,6 @@ def yt_data():
 
 
 def create_tables():
-    print("Creating Tables")
     Base.metadata.create_all(bind=engine)
 
 

@@ -5,6 +5,6 @@ from pydantic import BaseModel
 class VideoCreate(BaseModel):
     title: str
     channel_name: str
-    url: str
+    thumbnail_url: str
     description: str
     date_posted: str
